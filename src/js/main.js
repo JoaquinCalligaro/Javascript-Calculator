@@ -8,7 +8,10 @@ btn7 = document.getElementById('btn7');
 btn8 = document.getElementById('btn8');
 btn9 = document.getElementById('btn9');
 btn0 = document.getElementById('btn0');
-// btnSuma = document.getElementById('btnsuma');
+btnSuma = document.getElementById('btnsuma');
+btnResta = document.getElementById('btnmenos');
+btnClear = document.getElementById('btnClear');
+btnResultado = document.getElementById('btnResultado');
 display = document.getElementById('display');
 
 btn1.addEventListener('click', function () {
@@ -28,37 +31,94 @@ btn2.addEventListener('click', function () {
 });
 
 btn3.addEventListener('click', function () {
-  display.innerText += '3';
+  if (display.innerText === '0') {
+    display.innerText = '3';
+  } else {
+    display.innerText += '3';
+  }
 });
 
 btn4.addEventListener('click', function () {
-  display.innerText += '4';
+  if (display.innerText === '0') {
+    display.innerText = '4';
+  } else {
+    display.innerText += '4';
+  }
 });
 
 btn5.addEventListener('click', function () {
-  display.innerText += '5';
+  if (display.innerText === '0') {
+    display.innerText = '5';
+  } else {
+    display.innerText += '5';
+  }
 });
 
 btn6.addEventListener('click', function () {
-  display.innerText += '6';
+  if (display.innerText === '0') {
+    display.innerText = '6';
+  } else {
+    display.innerText += '6';
+  }
 });
 
 btn7.addEventListener('click', function () {
-  display.innerText += '7';
+  if (display.innerText === '0') {
+    display.innerText = '7';
+  } else {
+    display.innerText += '7';
+  }
 });
 
 btn8.addEventListener('click', function () {
-  display.innerText += '8';
+  if (display.innerText === '0') {
+    display.innerText = '8';
+  } else {
+    display.innerText += '8';
+  }
 });
 
 btn9.addEventListener('click', function () {
-  display.innerText += '9';
+  if (display.innerText === '0') {
+    display.innerText = '9';
+  } else {
+    display.innerText += '9';
+  }
 });
 
 btn0.addEventListener('click', function () {
   display.innerText += '0';
 });
 
-// btnSuma = addEventListener('click', function () {
-//   display.innerText += '+';
-// });
+btnClear.addEventListener('click', function () {
+  display.innerText = '0';
+});
+
+let num1 = 0;
+let num2 = 0;
+let operador = '';
+
+//! suma
+btnSuma.addEventListener('click', function () {
+  num1 = Number(display.innerText);
+  operador = '+';
+  display.innerText = '0';
+});
+
+//! Resta
+btnResta.addEventListener('click', function () {
+  num1 = Number(display.innerText);
+  operador = '-';
+  display.innerText = '0';
+});
+
+btnResultado.addEventListener('click', function () {
+  num2 = Number(display.innerText);
+  let resultado;
+  if (operador === '+') {
+    resultado = num1 + num2;
+  } else if (operador === '-') {
+    resultado = num1 - num2;
+  }
+  display.innerText = resultado;
+});
