@@ -138,7 +138,15 @@ btnResultado.addEventListener('click', function () {
   } else if (operador === '*') {
     resultado = num1 * num2;
   } else if (operador === '/') {
-    resultado = num1 / num2;
+    if (num2 === 0) {
+      resultado = 'No se puede dividir por 0';
+      setTimeout(() => {
+        display.innerText = '0';
+      }, 2000);
+    } else {
+      resultado = num1 / num2;
+    }
   }
+
   display.innerText = resultado;
 });
