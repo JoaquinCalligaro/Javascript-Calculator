@@ -10,8 +10,10 @@ btn9 = document.getElementById('btn9');
 btn0 = document.getElementById('btn0');
 btnSuma = document.getElementById('btnsuma');
 btnResta = document.getElementById('btnmenos');
-btnClear = document.getElementById('btnClear');
-btnResultado = document.getElementById('btnResultado');
+btnMultiplicar = document.getElementById('btnmultiplicacion');
+btnDivision = document.getElementById('btndivision');
+btnLimpiar = document.getElementById('btnlimpiar');
+btnResultado = document.getElementById('btnresultado');
 display = document.getElementById('display');
 
 btn1.addEventListener('click', function () {
@@ -90,7 +92,7 @@ btn0.addEventListener('click', function () {
   display.innerText += '0';
 });
 
-btnClear.addEventListener('click', function () {
+btnLimpiar.addEventListener('click', function () {
   display.innerText = '0';
 });
 
@@ -112,6 +114,20 @@ btnResta.addEventListener('click', function () {
   display.innerText = '0';
 });
 
+//! Multiplicacion
+btnMultiplicar.addEventListener('click', function () {
+  num1 = Number(display.innerText);
+  operador = '*';
+  display.innerText = '0';
+});
+
+//! Division
+btnDivision.addEventListener('click', function () {
+  num1 = Number(display.innerText);
+  operador = '/';
+  display.innerText = '0';
+});
+//! Resultado
 btnResultado.addEventListener('click', function () {
   num2 = Number(display.innerText);
   let resultado;
@@ -119,6 +135,10 @@ btnResultado.addEventListener('click', function () {
     resultado = num1 + num2;
   } else if (operador === '-') {
     resultado = num1 - num2;
+  } else if (operador === '*') {
+    resultado = num1 * num2;
+  } else if (operador === '/') {
+    resultado = num1 / num2;
   }
   display.innerText = resultado;
 });
